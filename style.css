@@ -1,0 +1,396 @@
+/* ===================================
+   RESET & BASE STYLES
+=================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: #2c1810;
+    background: #f4f1ea;
+    padding-top: 90px; /* Sesuaikan header fixed */
+}
+
+/* ===================================
+   CONTAINER
+=================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===================================
+   HEADER & NAVIGATION
+=================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #5c3900;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d7b899;
+}
+
+/* ===================================
+   HERO SECTION
+=================================== */
+.hero {
+    text-align: center;
+    padding: 150px 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* ===================================
+   OUR STORY SECTION
+=================================== */
+.our-story {
+    padding: 80px 5%;
+    background: #f9f6f1;
+}
+
+.our-story h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #3d2414;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.story-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.story-images {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.story-images img {
+    width: 350px;
+    min-width: 350px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.story-images img:hover {
+    transform: scale(1.05);
+}
+
+.story-text {
+    flex: 1;
+}
+
+.story-text p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    text-align: justify;
+}
+
+/* Responsive Our Story */
+@media (max-width: 768px) {
+    .story-content {
+        flex-direction: column;
+    }
+    .story-images img {
+        height: 250px;
+    }
+}
+
+/* ===================================
+   FOUNDER SECTION
+=================================== */
+.founder-section {
+    background: #f4f1ea;
+    padding: 0;
+    overflow: hidden;
+}
+
+.founder-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.founder-image img {
+    width: 500px;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 12px;
+}
+
+.founder-quote {
+    background: #e8e4dc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+}
+
+.founder-quote p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-style: italic;
+    color: #2c1810;
+}
+
+/* ===================================
+   JENIS KOPI (CARDS)
+=================================== */
+.coffee-section {
+    padding: 80px 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 60px;
+    color: #3e2723;
+}
+
+/* Grid Kopi */
+.coffee-grid {
+    display: grid;
+    gap: 35px;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+}
+
+/* Card Kopi */
+.coffee-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.coffee-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Gambar */
+.coffee-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.coffee-card:hover .coffee-image {
+    transform: scale(1.05);
+}
+
+/* Konten */
+.coffee-content {
+    padding: 25px;
+}
+
+.coffee-name {
+    font-size: 1.6rem;
+    color: #3e2723;
+}
+
+/* ===================================
+   GALERI
+=================================== */
+.gallery-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.gallery-container {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* ===================================
+   BREWING SECTION
+=================================== */
+.brewing-section {
+    padding: 4rem 0;
+}
+
+.brewing-methods {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.method-card {
+    background: linear-gradient(135deg,#6d4c41,#5d4037);
+    color: #fff;
+    padding: 2rem;
+    width: 280px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+/* ===================================
+   CONTACT SECTION
+=================================== */
+.contact-section {
+    padding: 4rem 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-card {
+    width: 300px;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.social-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+/* Instagram */
+.social-card.instagram {
+    border: 2px solid #E1306C;
+}
+
+.social-card.instagram:hover {
+    background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+    color: #fff;
+}
+
+/* WhatsApp */
+.social-card.whatsapp {
+    border: 2px solid #25D366;
+}
+
+.social-card.whatsapp:hover {
+    background: #25D366;
+    color: #fff;
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+footer {
+    background: #3e2723;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* ===================================
+   RESPONSIVE
+=================================== */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .nav-links { gap: 1rem; font-size: 0.9rem; }
+    .founder-container { grid-template-columns: 1fr; }
+}
